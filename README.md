@@ -19,10 +19,10 @@
 ## 截图
 
 ### 明亮主题
-<!-- 可在此添加截图 -->
+![Light Theme](images/light.jpg)
 
 ### 暗黑主题
-<!-- 可在此添加截图 -->
+![Dark Theme](images/dark.jpg)
 
 ## 项目结构
 

@@ -16,6 +16,14 @@ Go to [Releases](https://github.com/na2h2p207-hue/JavCover_Insert/releases) to d
 - **GUI Application**: PyWebView-powered desktop GUI with light/dark theme toggle
 - **Batch / Single File**: Support folder batch processing and single-file manual fix
 
+## Screenshots
+
+### Light Theme
+![Light Theme](images/light.jpg)
+
+### Dark Theme
+![Dark Theme](images/dark.jpg)
+
 ## Project Structure
 
 ```
