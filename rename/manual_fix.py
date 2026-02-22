@@ -16,8 +16,8 @@ import sys
 import re
 import subprocess
 
-# 封面目录
-COVER_DIR = r'c:\Users\jerom\Desktop\mosaic\label\cover'
+# 封面目录（相对于脚本所在的 rename/ 的上级目录）
+COVER_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'cover')
 
 def extract_code(filename):
     """从文件名提取番号"""
