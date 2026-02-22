@@ -12,7 +12,6 @@ Go to [Releases](https://github.com/na2h2p207-hue/JavCover_Insert/releases) to d
 
 - **Auto Rename**: Extract code from filename, fetch Japanese title, rename to `CODE Title.mp4`
 - **Cover Embedding**: Download cover art, crop right half, embed into MP4 metadata
-- **FC2 Support**: Handle FC2-PPV format videos
 - **GUI Application**: PyWebView-powered desktop GUI with light/dark theme toggle
 - **Batch / Single File**: Support folder batch processing and single-file manual fix
 
@@ -35,7 +34,6 @@ Go to [Releases](https://github.com/na2h2p207-hue/JavCover_Insert/releases) to d
 ├── rename/
 │   ├── rename_movies.py    # Core renaming logic
 │   ├── manual_fix.py       # Single-file manual fix
-│   ├── fc2_scraper.py      # FC2 metadata scraper
 │   └── faststart.py        # FFmpeg faststart utility
 └── archive/
     └── build_artifacts/
@@ -76,7 +74,6 @@ pip install pywebview pythonnet cloudscraper mutagen Pillow requests
 |--------|---------|
 | Standard | `ABW-009`, `IPTD-764` |
 | No hyphen | `iptd00764` → `IPTD-764` |
-| FC2 | `FC2-PPV-1234567` |
 | DV series | `DV-1234` (4 digits) |
 
 ## License

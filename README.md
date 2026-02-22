@@ -12,7 +12,6 @@
 
 - **自动重命名**：从文件名提取番号，获取日语标题，重命名为 `CODE 标题.mp4`
 - **封面嵌入**：下载封面图，裁剪右半部分后嵌入 MP4 文件元数据
-- **FC2 支持**：支持 FC2-PPV 格式视频
 - **GUI 应用**：PyWebView 驱动的桌面 GUI，支持明暗主题切换
 - **批处理 / 单文件**：支持文件夹批量处理和单文件手动修复
 
@@ -35,7 +34,6 @@
 ├── rename/
 │   ├── rename_movies.py    # 核心重命名逻辑
 │   ├── manual_fix.py       # 单文件手动修复
-│   ├── fc2_scraper.py      # FC2 元数据抓取
 │   └── faststart.py        # FFmpeg faststart 工具
 └── archive/
     └── build_artifacts/
@@ -76,7 +74,6 @@ pip install pywebview pythonnet cloudscraper mutagen Pillow requests
 |------|------|
 | 标准 | `ABW-009`, `IPTD-764` |
 | 无连字符 | `iptd00764` → `IPTD-764` |
-| FC2 | `FC2-PPV-1234567` |
 | DV 系列 | `DV-1234`（4 位数）|
 
 ## 许可证
