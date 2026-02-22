@@ -35,15 +35,21 @@ jobs:
           --add-data "rename:rename" \
           JavCover_WebView.py
 
-      - name: Package Application
+      - name: Package Application as DMG
         run: |
           cd dist
-          zip -ry JavCover-macOS.zip JavCover.app
+          # Create a temporary folder for the DMG contents
+          mkdir dmg_folder
+          mv JavCover.app dmg_folder/
+          # Create a symlink to Applications folder
+          ln -s /Applications dmg_folder/Applications
+          # Create the DMG
+          hdiutil create -volname "JavCover" -srcfolder dmg_folder -ov -format UDZO JavCover-macOS.dmg
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.tag_name }}
-          files: dist/JavCover-macOS.zip
+          files: dist/JavCover-macOS.dmg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
