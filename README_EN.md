@@ -10,13 +10,15 @@ Go to [Releases](https://github.com/na2h2p207-hue/JavCover_Insert/releases) to d
 
 ## 🌟 Core Features
 
-- **Full SHT Website Format Support**: Accurately extracts codes and cleans titles regardless of messy prefixes or suffixes from SHT downloads (e.g. `[SHT] ABW-009...`).
-- **Smart Title Cleaning**: Automatically sanitizes redundant Japanese actor names (e.g. `菊乃らん菊乃らん` → `菊乃らん`) and strips irrelevant trailing Romaji added by scrapers.
+- **Full SHT Website Format Support**: Accurately extracts codes and cleans titles regardless of messy prefixes or suffixes from SHT downloads.
+- **Smart Title Cleaning**: Automatically sanitizes redundant Japanese actor names and strips irrelevant trailing Romaji added by scrapers.
 - **Suffix Preservation**: Intelligently detects and preserves crucial video tags like `无码-lada` and `-C` through the renaming pipeline, ensuring uncensored info is never lost.
 - **Video Structure Repair**: Built-in detection algorithm automatically intercepts and fixes `dat` atom corruption often introduced by editing tools like LosslessCut.
 - **Faststart Optimization**: Standardizes files by shifting the MP4 `moov` atom directly to the front, enabling instant un-buffered playback across media players and web environments.
 - **Safe Cover Embedding**: Intelligently aligns and crops cover art (378:538 ratio) before safely injecting it directly into the MP4 metadata via Mutagen engine.
 - **Premium GUI UX**: A PyWebView-powered native desktop client featuring fluent liquid glass layouts and intuitive light/dark theme toggles.
+- **Real-time Cover Preview & Saving**: Instantly preview intelligently cropped cover art in matching aspect ratio natively within the GUI during processing; cover image files are also securely auto-saved systematically in your selected local directory.
+  <br><img src="images/generated-1771221918008.png" width="300" alt="Cover Preview Example">
 - **Versatile Workflows**: Provides highly scalable batch processing for entire libraries and precise manual fixes for select single files instantly.
 
 ## Screenshots
