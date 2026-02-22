@@ -1,0 +1,30 @@
+# Virtual environment
+.venv/
+
+# Build artifacts
+build/
+dist/
+__pycache__/
+
+# IDE / Editor
+*.code-workspace
+.gemini/
+.agent/
+
+# System
+desktop.ini
+*.lnk
+nul
+
+# Design files
+*.pen
+
+# Old GUI versions
+JavCover_GUI.py
+JavCover_GUI_v3.py
+
+# Misc
+AGENTS.md
+cover/
+images/
+mosaic.lnk

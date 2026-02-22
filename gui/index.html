@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavCover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Title Bar -->
+    <div class="title-bar">
+        <div class="theme-toggle" id="themeToggle">
+            <!-- Sun Icon (Light Mode) -->
+            <svg class="toggle-icon icon-sun" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon (Dark Mode) -->
+            <svg class="toggle-icon icon-moon" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <div class="toggle-knob"></div>
+        </div>
+
+        <div class="title-text">JavCover</div>
+
+        <div class="window-controls">
+            <button class="control-btn minimize" onclick="pywebview.api.minimize()"></button>
+            <button class="control-btn maximize" onclick="pywebview.api.toggle_maximize()"></button> <!-- Optional: mostly disabled in resize-less app -->
+            <button class="control-btn close" onclick="pywebview.api.close()"></button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        
+        <!-- Actions -->
+        <div class="actions-row">
+            <div class="glass-btn-main" onclick="pywebview.api.start_javcover()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                JavCover
+            </div>
+            <div class="btn-manual" onclick="pywebview.api.start_manual()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:4px">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+                Manual Fix
+            </div>
+        </div>
+
+        <!-- Split Body -->
+        <div class="body-split">
+            <!-- Left Info -->
+            <div class="left-col">
+                <div class="progress-section">
+                    <div class="status-label" id="lblTotal">Batch Progress: 0/0</div>
+                    <div class="progress-track"><div class="progress-fill" id="barTotal" style="width: 0%"></div></div>
+                    
+                    <div class="file-label" id="lblFile">Ready</div>
+                    <div class="progress-track file-track"><div class="progress-fill file-fill" id="barFile" style="width: 0%"></div></div>
+                </div>
+
+                <div class="log-area" id="logArea"></div>
+            </div>
+
+            <!-- Right Preview -->
+            <div class="cover-preview">
+                <div class="cover-placeholder" id="coverPlaceholder">No Cover</div>
+                <img class="cover-img" id="coverImg" src="" alt="Cover">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="input-group" id="btnBrowse" style="cursor: pointer" onclick="pywebview.api.select_folder()">
+                <div style="font-weight: 600; margin-right: 10px;">Cover Save:</div>
+                <div class="path-text" id="pathText">...</div>
+            </div>
+            <div class="btn-browse" onclick="pywebview.api.select_folder()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div id="statusL">Ready</div>
+        <div>JavCover v4.0 (WebView)</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
