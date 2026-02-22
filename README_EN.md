@@ -8,12 +8,16 @@ Now with **JavCover** GUI — just double-click the `.exe` to use, no Python req
 
 Go to [Releases](https://github.com/na2h2p207-hue/JavCover_Insert/releases) to download the latest `JavCover.exe`. Run it directly — no installation needed.
 
-## Features
+## 🌟 Core Features
 
-- **Auto Rename**: Extract code from filename, fetch Japanese title, rename to `CODE Title.mp4`
-- **Cover Embedding**: Download cover art, crop right half, embed into MP4 metadata
-- **GUI Application**: PyWebView-powered desktop GUI with light/dark theme toggle
-- **Batch / Single File**: Support folder batch processing and single-file manual fix
+- **Full SHT Website Format Support**: Accurately extracts codes and cleans titles regardless of messy prefixes or suffixes from SHT downloads (e.g. `[SHT] ABW-009...`).
+- **Smart Title Cleaning**: Automatically sanitizes redundant Japanese actor names (e.g. `菊乃らん菊乃らん` → `菊乃らん`) and strips irrelevant trailing Romaji added by scrapers.
+- **Suffix Preservation**: Intelligently detects and preserves crucial video tags like `无码-lada` and `-C` through the renaming pipeline, ensuring uncensored info is never lost.
+- **Video Structure Repair**: Built-in detection algorithm automatically intercepts and fixes `dat` atom corruption often introduced by editing tools like LosslessCut.
+- **Faststart Optimization**: Standardizes files by shifting the MP4 `moov` atom directly to the front, enabling instant un-buffered playback across media players and web environments.
+- **Safe Cover Embedding**: Intelligently aligns and crops cover art (378:538 ratio) before safely injecting it directly into the MP4 metadata via Mutagen engine.
+- **Premium GUI UX**: A PyWebView-powered native desktop client featuring fluent liquid glass layouts and intuitive light/dark theme toggles.
+- **Versatile Workflows**: Provides highly scalable batch processing for entire libraries and precise manual fixes for select single files instantly.
 
 ## Screenshots
 
@@ -70,11 +74,13 @@ pip install pywebview pythonnet cloudscraper mutagen Pillow requests
 
 ## Code Formats
 
-| Format | Example |
-|--------|---------|
-| Standard | `ABW-009`, `IPTD-764` |
-| No hyphen | `iptd00764` → `IPTD-764` |
-| DV series | `DV-1234` (4 digits) |
+| Format | Example | Support Detail |
+|--------|---------|----------------|
+| Standard Hyphen | `ABW-009` | Perfect parsing |
+| No Hyphen | `iptd00764` → `IPTD-764` | Auto-adds hyphen and trims zero-padding |
+| DV Series (4-digit) | `DV-1234` | Specific 4-digit code extraction |
+| SHT Website Format | `[SHT] SSNI-123_FHD...` | Deep filtering of noisy prefixes/suffixes |
+| Complex Strings | `h_086ssni123` | Advanced RegExp extraction handling |
 
 ## License
 
